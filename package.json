@@ -1,0 +1,25 @@
+{
+  "name": "react-startkit",
+  "version": "0.0.1",
+  "description": "get react started",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pennyren/react-startkit.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "pennyren",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pennyren/react-startkit/issues"
+  },
+  "homepage": "https://github.com/pennyren/react-startkit#readme",
+  "devDependencies": {
+    "webpack": "^1.13.2"
+  }
+}
