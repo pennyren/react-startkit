@@ -1,2 +1,5 @@
-# ignore node modules
-node_modules/
+# Dependency directory
+node_modules
+
+# Bundle
+dist

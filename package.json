@@ -19,7 +19,19 @@
     "url": "https://github.com/pennyren/react-startkit/issues"
   },
   "homepage": "https://github.com/pennyren/react-startkit#readme",
+  "dependencies": {
+    "immutable": "^3.8.1",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.7.0",
+    "redux": "^3.5.2"
+  },
   "devDependencies": {
+    "css-loader": "^0.24.0",
+    "html-webpack-plugin": "^2.22.0",
+    "open-browser-webpack-plugin": "0.0.2",
+    "style-loader": "^0.13.1",
     "webpack": "^1.13.2"
   }
 }
