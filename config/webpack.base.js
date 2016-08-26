@@ -12,12 +12,15 @@ const config = {
 	module: {
 		loaders:[{
 			test: /\.js[x]?$/,
-            exclude: [/node_modules/],
+            exclude: [/node_modules/, /config/],
             loader: 'babel-loader'
 		}, {
 			test: /\.css$/,
 			loader: 'style-loader!css-loader!postcss-loader'
-		}]
+		}, {
+			test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)$/,
+            loader: 'url-loader?limit=8192'
+        }]
 	},
 	postcss: () => ([autoprefixer]),
 	plugins: [
