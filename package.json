@@ -1,10 +1,13 @@
 {
   "name": "react-startkit",
   "version": "0.0.1",
-  "description": "get react started",
-  "main": "index.js",
+  "description": "react boilerplate",
+  "main": "./app/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run dev",
+    "build": "webpack -p --config ./config/webpack.build.js",
+    "dev": "webpack-dev-server --hot --inline --progress --config ./config/webpack.dev.js",
+    "test": ""
   },
   "repository": {
     "type": "git",
@@ -28,10 +31,16 @@
     "redux": "^3.5.2"
   },
   "devDependencies": {
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "style-loader": "^0.13.1",
     "css-loader": "^0.24.0",
+    "postcss-loader": "^0.10.1",
+    "autoprefixer": "^6.4.0",
     "html-webpack-plugin": "^2.22.0",
     "open-browser-webpack-plugin": "0.0.2",
-    "style-loader": "^0.13.1",
+    "webpack-dev-server": "^1.15.0",
     "webpack": "^1.13.2"
   }
 }
