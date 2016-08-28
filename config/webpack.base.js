@@ -2,9 +2,10 @@ const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const appSrc = '../app';
 
 const config = {
-	entry: path.resolve(__dirname, '../app/index.js'),
+	entry: path.resolve(__dirname, appSrc + '/app.js'),
 	output: {
 		path: path.resolve(__dirname, '../dist'),
 		filename: 'bundle.js'
@@ -26,7 +27,7 @@ const config = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			inject: true,
-			template: path.resolve(__dirname, '../index.html')
+			template: path.resolve(__dirname, appSrc + '/index.html')
 		})
 	]
 };

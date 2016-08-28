@@ -2,7 +2,7 @@
   "name": "react-startkit",
   "version": "0.0.1",
   "description": "react boilerplate",
-  "main": "./app/index.js",
+  "main": "./app/app.js",
   "scripts": {
     "start": "npm run dev",
     "build": "webpack -p --config ./config/webpack.build.js",
