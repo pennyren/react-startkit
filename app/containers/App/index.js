@@ -1,13 +1,13 @@
 import React from 'react';
-import Item from '/components/Item';
+import Message from '../../components/Message';
 
 class App extends React.component {
 	render() {
 		return (
-			<div className="wrap">
-				<Item></Item>
+			<div>
+				<Message name="React" />
 			</div>
-		)
+		);
 	}
 }
 
