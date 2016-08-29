@@ -1,7 +1,7 @@
 import React from 'react';
 import Message from '../../components/Message';
 
-class App extends React.component {
+class App extends React.Component {
 	render() {
 		return (
 			<div>
