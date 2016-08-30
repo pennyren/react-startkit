@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const cssNext = require('postcss-cssnext');
 const appSrc = '../app';
 
 const config = {
@@ -23,7 +23,7 @@ const config = {
             loader: 'url-loader?limit=8192'
         }]
 	},
-	postcss: () => ([autoprefixer]),
+	postcss: () => ([cssNext]),
 	plugins: [
 		new HtmlWebpackPlugin({
 			inject: true,
