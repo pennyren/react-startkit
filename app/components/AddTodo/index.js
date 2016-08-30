@@ -10,9 +10,7 @@ class AddTodo extends Component {
         this.addTodo = this.addTodo.bind(this);
     }
     addTodo(e) {
-    	
     	const todo = this.addTodoInput.value;
-    	
     	this.props.addToList(todo);
     	this.addTodoInput.value = '';
     }
@@ -25,7 +23,5 @@ class AddTodo extends Component {
 		);
 	}
 }
-
-
 
 export default AddTodo;
