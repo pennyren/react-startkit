@@ -1,66 +1,54 @@
 import React from 'react';
 import AddTodo from '../../components/AddTodo';
-import TodoList from '../../components/TodoList';
+import TodoList from '../TodoList';
 import Footer from '../../components/Footer';
+
+import Map from ''
+import bind from '../../utils/bind'
 import style from './style.css';
 
 class App extends React.Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
 			todos: [{text: 'Use Redux', completed: true}, {text: 'Learn to connect it to React', completed: false}],
-			status: 'all'
+			filter: 'All'
 		};
-		this.addToList = this.addToList.bind(this);
-		this.onFilterChange = this.onFilterChange.bind(this);
-		this.deleteItem = this.deleteItem.bind(this);
-		this.statusChange = this.statusChange.bind(this);
+		bind(this, [this.addTodo, this.filterTodos, this.changeStatus]);
 	}
-	addToList(text) {
-		let todo = {text: text, completed: false};
-		let copyTodos = Object.assign({}, this.state);
-		copyTodos.todos.push(todo);
-		this.setState(copyTodos);
+	addTodo(e) {
+		
 	}
-	onFilterChange(status) {
-		let copyTodos = Object.assign({}, this.state);
-		copyTodos.status = status;
-		this.setState(copyTodos);
+	
+	delTodo(e) {
+		e.stopP
+		console.log(e.currentTarget);
 	}
-	deleteItem(e) {
-		e.stopPropagation();
-		const index = e.currentTarget.parentNode.getAttribute('data-index');
-		let copyTodos = Object.assign({}, this.state);
-		copyTodos.todos.splice(index, 1);
-		this.setState(copyTodos);
+	changeStatus(e) {
+		console.log(e.currentTarget);
 	}
-	statusChange(e) {
-		const index = e.currentTarget.getAttribute('data-index');
-		let copyTodos = Object.assign({}, this.state);
-		let item = copyTodos.todos[index];
-		item.completed = !item.completed;
-		this.setState(copyTodos);
+	filterTodos(e) {
+		
+		
 	}
 	render() {
 		let curTodos = this.state.todos;
-		let status = this.state.status;
-
-		if (status == 'completed' || status == 'active') {
+		let todoHandle = {
+			changeStatus: this.changeStatus,
+			delTodo: this.delTodo
+		}
+		
+		if (this.state.filter !== 'All') {
 			curTodos = curTodos.filter((todo) => {
-				if (status == 'completed') {
-					return todo.completed;
-				} else {
-
-					return !todo.completed;
-				}
+				return this.state.status == 'Completed' ? todo.completed : !todo.completed;
 			});
 		}
 		
 		return (
 			<div className="wrap">
-				<AddTodo addToList={this.addToList}/>
-				<TodoList todos={curTodos} deleteItem={this.deleteItem} statusChange={this.statusChange}/>
-				<Footer onFilterChange={this.onFilterChange} />
+				<AddTodo addTodo={this.addTodo}/>
+				<TodoList todos={curTodos} changeStatus={this.changeStatus} delTodo={this.delTodo}/>
+				<Footer filterTodos={this.filterTodos}/>
 			</div>
 		);
 	}
