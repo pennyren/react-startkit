@@ -3,11 +3,9 @@ import style from './style.css';
 
 function Footer(props) {
 	let filters = ['All', 'Completed', 'Active'];
+	let items = filters.map((filter, index) => <a href="#" key={index} onClick={props.onClick}>{filter}</a>)
 	return (
-		<p>
-			Show:
-			{filters.map((item, index) => <a href="#" key={index} onClick={props.filterTodos}>{item}</a>)}
-		</p>
+		<p>Show:{items}</p>
 	)
 }
 

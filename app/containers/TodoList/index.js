@@ -2,10 +2,11 @@ import React from 'react';
 import Todo from '../../Components/Todo';
 
 function TodoList(props) {
-	const {todos, ...others} = props;
+	const {todos, onClick} = props;
+	let items = todos.map((todo, index) => <Todo {...todo} key={index} index={index} onClick={onClick}/>)
 	return (
 		<ul>
-			{todos.map((todo, index) => <Todo {...todo} key={index} index={index} {...others}/>)}
+			{items}
 		</ul>
 	)
 }

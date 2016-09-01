@@ -5,7 +5,7 @@ function AddTodo(props) {
 	return (
 		<div>
 			<input type='text'/>
-			<button onClick={props.addTodo}>Add</button>
+			<button onClick={props.onClick}>Add</button>
 		</div>
 	);
 }
