@@ -20,7 +20,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="wrap">
-				<AddTodo addTodo={this._addTodo.bind(this)}/>
+				<AddTodo addTodo={this._addTodo.bind(this)} />
 				<TodoList />
 				<Footer />
 			</div>

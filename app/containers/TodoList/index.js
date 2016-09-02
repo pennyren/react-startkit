@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Todo from '../../Components/Todo';
+
 import {delTodo, toggleTodo} from './actions';
 import store from '../../store';
 
@@ -8,20 +9,18 @@ class TodoList extends React.Component {
 	_delTodo(e) {
 		e.stopPropagation();
 		const index = e.currentTarget.parentNode.getAttribute('data-index');
-		console.log(index);
-		store.dispatch(delTodo(index));
+		store.dispatch(delTodo(+index));
 	}
 	_toggleTodo(e) {
 		const index = e.currentTarget.getAttribute('data-index');
-		console.log(index);
-		store.dispatch(toggleTodo(index));
-		console.log(store.getState())
+		store.dispatch(toggleTodo(+index));
 	}
 	render() {
 		let todos = this.props.todos;
 		let items = todos.map((todo, index) => {
 			return <Todo {...todo} key={index} index={index} delTodo={this._delTodo} toggleTodo={this._toggleTodo} />
 		})
+		
 		return (
 			<ul>
 				{items}
@@ -30,9 +29,23 @@ class TodoList extends React.Component {
 	}
 }
 
-const mapStateToPorps = function(store) {
-	return {
-		todos: store.todos
+const selector = function(store) {
+	const filter = store.filter;
+	let todos = store.todos;
+	switch (filter) {
+		case 'Completed':
+			return todos.filter(todo => todo.completed);
+		case 'Active':
+			return todos.filter(todo => !todo.completed);
+		default:
+			return todos;
 	}
 }
+
+const mapStateToPorps = function(store) {
+	return {
+		todos: selector(store)
+	}
+}
+
 export default connect(mapStateToPorps)(TodoList);

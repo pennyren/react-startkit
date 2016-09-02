@@ -6,8 +6,7 @@
   "scripts": {
     "start": "npm run dev",
     "build": "webpack -p --config ./config/webpack.build.js",
-    "dev": "webpack-dev-server --hot --inline --progress --config ./config/webpack.dev.js",
-    "test": ""
+    "dev": "webpack-dev-server --hot --inline --progress --config ./config/webpack.dev.js"
   },
   "repository": {
     "type": "git",
@@ -23,7 +22,6 @@
   },
   "homepage": "https://github.com/pennyren/react-startkit#readme",
   "dependencies": {
-    "immutable": "^3.8.1",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-redux": "^4.4.5",

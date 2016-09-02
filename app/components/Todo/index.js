@@ -1,7 +1,6 @@
 import React from 'react';
 import style from './style.css'
 
-
 function Todo(props) {
 	const text = <span className="item">{props.text}</span>;
 	const icon = <span className="delete" onClick={props.delTodo}>x</span>;

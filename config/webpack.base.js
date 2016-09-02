@@ -13,7 +13,7 @@ const config = {
 	module: {
 		loaders:[{
 			test: /\.js[x]?$/,
-            exclude: [/node_modules/, /config/],
+            exclude: /node_modules/,
             loader: 'babel-loader'
 		}, {
 			test: /\.css$/,

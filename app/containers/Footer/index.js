@@ -22,6 +22,7 @@ class Footer extends React.Component {
 				return <a href="#" key={index} onClick={this._filterTodos}>{name}</a>
 			}
 		});
+		
 		return (
 			<p>Show: {content}</p>
 		)
