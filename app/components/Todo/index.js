@@ -1,15 +1,15 @@
 import React from 'react';
 import style from './style.css'
 
-function Todo(props) {
-	let className = props.completed ? 'completed' : '';
 
-	return (
-		<li className={className} onClick={props.onClick.changeStatus} data-index={props.index}>
-			<span className="item">{props.text}</span>
-			<span className="delete" onClick={props.onClick.delTodo}>x</span>
-		</li>
-	);
+function Todo(props) {
+	const text = <span className="item">{props.text}</span>;
+	const icon = <span className="delete" onClick={props.delTodo}>x</span>;
+	if (props.completed) {
+		return <li className="completed" data-index={props.index} onClick={props.toggleTodo}>{text}{icon}</li>;
+	} else {
+		return <li data-index={props.index} onClick={props.toggleTodo}>{text}{icon}</li>;
+	}
 }
 
 export default Todo;
