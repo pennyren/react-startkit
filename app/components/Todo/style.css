@@ -1,20 +1,24 @@
-li {
-	cursor: pointer;
-	margin-bottom: 8px;
-	&.completed .item{
-		text-decoration: line-through;
-	}
-	& .delete {
-	    display: block;
-	    height: 16px;
-	    width: 16px;
-	    float: right;
-	    margin-right: 10%;
-	   	text-align: center;
-	    line-height: 12px;
-	    border-radius: 16px;
-	    background-color: #39b881;
-	    color: #fff;
-	}
+.item {
+	height: 40px;
+	border-bottom: 1px solid #ededed;
+	transition: background .6s ease-in;
+}
+.item:hover {
+	background-color: #ededed;
 }
 
+.item .content {
+	cursor: pointer;
+	display: inline-block;
+	line-height: 40px;
+	padding: 0 8px;
+}
+.item .completed {
+	text-decoration: line-through;
+}
+
+.item .mdi-delete {
+	float: right;
+	cursor: pointer;
+	margin-right: 8px;
+}

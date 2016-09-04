@@ -1,3 +1,11 @@
-a {
+.filter {
+	margin: 0;
+	padding: 16px;
+	
+
+}
+
+.filter a {
 	margin-left: 16px;
 }
+

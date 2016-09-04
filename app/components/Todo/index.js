@@ -2,13 +2,15 @@ import React from 'react';
 import style from './style.css'
 
 function Todo(props) {
-	const text = <span className="item">{props.text}</span>;
-	const icon = <span className="delete" onClick={props.delTodo}>x</span>;
-	if (props.completed) {
-		return <li className="completed" data-index={props.index} onClick={props.toggleTodo}>{text}{icon}</li>;
-	} else {
-		return <li data-index={props.index} onClick={props.toggleTodo}>{text}{icon}</li>;
+	let textProps = {
+		className: props.completed ? 'content completed' : 'content',
+		onClick: props.toggleTodo
 	}
+	
+	return (<li className="item" data-index={props.index}>
+				<span {...textProps}>{props.text}</span>
+				<i className="mdi mdi-delete" onClick={props.delTodo}></i>
+			</li>);
 }
 
 export default Todo;

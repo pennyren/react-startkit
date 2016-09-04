@@ -5,6 +5,8 @@ import Todo from '../../Components/Todo';
 import {delTodo, toggleTodo} from './actions';
 import store from '../../store';
 
+import style from './style.css';
+
 class TodoList extends React.Component {
 	_delTodo(e) {
 		e.stopPropagation();
@@ -12,7 +14,7 @@ class TodoList extends React.Component {
 		store.dispatch(delTodo(+index));
 	}
 	_toggleTodo(e) {
-		const index = e.currentTarget.getAttribute('data-index');
+		const index = e.currentTarget.parentNode.getAttribute('data-index');
 		store.dispatch(toggleTodo(+index));
 	}
 	render() {
@@ -22,7 +24,7 @@ class TodoList extends React.Component {
 		})
 		
 		return (
-			<ul>
+			<ul className="list">
 				{items}
 			</ul>
 		)

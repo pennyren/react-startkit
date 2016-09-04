@@ -16,15 +16,20 @@ class Footer extends React.Component {
 		const show = ['All', 'Completed', 'Active'];
 		const activeIndex = show.indexOf(this.props.filter);
 		let content = show.map((name, index) => {
-			if (index == activeIndex) {
-				return <a href="#" key={index} className="active" onClick={this._filterTodos}>{name}</a>;
-			} else {
-				return <a href="#" key={index} onClick={this._filterTodos}>{name}</a>
+			let props = {
+				href: '#',
+				key: index,
+				onClick: this._filterTodos
 			}
+			if (index == activeIndex) {
+				props.className = 'Active';
+			}
+		
+			return <a {...props}>{name}</a>;
 		});
 		
 		return (
-			<p>Show: {content}</p>
+			<p className="filter">Show: {content}</p>
 		)
 	}
 	
