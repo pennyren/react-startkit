@@ -5,7 +5,9 @@
     width: 250px;
     max-width: 100%;
 }
-
+.textfield.is-dirty .textfield-label {
+    visibility: hidden;
+}
 .textfield-input {
 	border: none;
     border-bottom: 1px solid rgba(0,0,0,.12);
@@ -54,6 +56,4 @@
 	visibility: visible;
 }
 
-.is-dirty {
 
-}

@@ -12,21 +12,22 @@ class AddTodo extends React.Component {
 		this.addTodo = this.addTodo.bind(this);
 	}
 	addTodo() {
-		const input = this.textField.input;
-		const val = input.value;
-		console.log(val);
-		input.value = '';
-		/*const text = input.value;
+		const input = this.textfield.input;
+
+		const text = input.value;
 		if (text == '') {
 			return;
 		}
 		input.value = '';
-		store.dispatch(addTodo(text));*/
+		 this.textfield.container.classList.remove('is-dirty');	
+
+		
+		store.dispatch(addTodo(text));
 	}
 	render() {
 		return (
 			<div className="add">
-				<TextField name="Todo" placeholder="Todo..." ref={r => this.textField = r}/>
+				<TextField name="Todo" placeholder="Todo..." ref={r => this.textfield = r}/>
 				<Button onClick={this.addTodo} name="Add"/>
 				
 			</div>
