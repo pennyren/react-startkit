@@ -1,11 +1,36 @@
 .filter {
-	margin: 0;
 	padding: 16px;
-	
-
 }
 
 .filter a {
-	margin-left: 16px;
+	position: relative;
+	font-weight: 600;
+	color: inherit;
+	height: 40px;
+    display: inline-block;
+    line-height: 40px;
+    padding: 0 16px;
+    text-align: center;
+    text-decoration: none;
 }
+
+.filter a:after {
+	position: absolute;
+	bottom: 0px;
+    left: 0px;
+	display: block;
+    content: " ";
+    height: 3px;
+    opacity: 0;
+    width: 0;
+}
+
+.filter a.is-active:after {
+	opacity: 1;
+    width: 100%;
+    background: rgb(255,64,129);
+  	transition: all 0.2s cubic-bezier(0.4, 0.0, 0.4, 1);
+}
+
+
 

@@ -1,7 +1,7 @@
 .item {
 	height: 40px;
 	border-bottom: 1px solid #ededed;
-	transition: background .6s ease-in;
+	transition: background-color .3s cubic-bezier(.4,0,.2,1);
 }
 .item:hover {
 	background-color: #ededed;
@@ -21,4 +21,7 @@
 	float: right;
 	cursor: pointer;
 	margin-right: 8px;
+	font-size: 2rem;
+    color: #39b881;
+    margin-top: 8px;
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import TextField from '../TextField';
+import Button from '../Button';
 
 import {addTodo} from '../../containers/TodoList/actions'
 import store from '../../store'
@@ -26,8 +27,8 @@ class AddTodo extends React.Component {
 		return (
 			<div className="add">
 				<TextField name="Todo" placeholder="Todo..." ref={r => this.textField = r}/>
+				<Button onClick={this.addTodo} name="Add"/>
 				
-				<button onClick={this.addTodo}>Add</button>
 			</div>
 		);
 	}

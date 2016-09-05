@@ -22,14 +22,14 @@ class Footer extends React.Component {
 				onClick: this._filterTodos
 			}
 			if (index == activeIndex) {
-				props.className = 'Active';
+				props.className = 'is-active';
 			}
 		
 			return <a {...props}>{name}</a>;
 		});
 		
 		return (
-			<p className="filter">Show: {content}</p>
+			<div className="filter">{content}</div>
 		)
 	}
 	

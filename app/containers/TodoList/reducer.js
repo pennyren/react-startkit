@@ -1,6 +1,15 @@
 import {ADD_TODO, DEL_TODO, TOGGLE_TODO} from './constants';
 
-const initialState = [{text: 'Use Redux', completed: true}, {text: 'Learn to connect it to React', completed: false}];
+const initialState = [{
+	text: 'Use Redux',
+	completed: true
+}, {
+	text: 'Learn to connect it to React',
+	completed: false
+}, {
+	text: 'Use Immutable',
+	completed: false
+}];
 
 const todosReducer = function(state = initialState, action) {
 	switch (action.type) {
