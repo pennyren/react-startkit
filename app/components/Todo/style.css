@@ -2,26 +2,24 @@
 	height: 40px;
 	border-bottom: 1px solid #ededed;
 	transition: background-color .3s cubic-bezier(.4,0,.2,1);
-}
-.item:hover {
-	background-color: #ededed;
-}
-
-.item .content {
-	cursor: pointer;
-	display: inline-block;
-	line-height: 40px;
-	padding: 0 8px;
-}
-.item .completed {
-	text-decoration: line-through;
-}
-
-.item .mdi-delete {
-	float: right;
-	cursor: pointer;
-	margin-right: 8px;
-	font-size: 2rem;
-    color: #b4c5cd;
-    margin-top: 8px;
+	&:hover {
+		background-color: #ededed;
+	}
+	& .content {
+		cursor: pointer;
+		display: inline-block;
+		line-height: 40px;
+		padding: 0 8px;
+	}
+	& .completed {
+		text-decoration: line-through;
+	}
+	& .mdi-delete {
+		float: right;
+		cursor: pointer;
+		margin-right: 8px;
+		font-size: 2rem;
+		color: #b4c5cd;
+		margin-top: 8px;
+	}
 }

@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const cssNext = require('postcss-cssnext');
 const appSrc = '../app';
 
 const config = {
@@ -23,7 +22,7 @@ const config = {
             loader: 'url-loader?limit=8192'
         }]
 	},
-	postcss: () => ([cssNext]),
+	postcss: () => [require('postcss-cssnext')],
 	plugins: [
 		new HtmlWebpackPlugin({
 			inject: true,

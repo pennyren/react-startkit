@@ -1,36 +1,37 @@
 .filter {
 	padding: 16px;
+    & a {
+        position: relative;
+        font-weight: 600;
+        color: inherit;
+        height: 40px;
+        display: inline-block;
+        line-height: 40px;
+        padding: 0 16px;
+        text-align: center;
+        text-decoration: none;
+        &:hover {
+            color: #8e7cb8;
+        }
+        &:after {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            display: block;
+            content: " ";
+            height: 3px;
+            opacity: 0;
+            width: 0;
+        }
+        &.is-active {
+            color: #8e7cb8;
+            &:after {
+                 opacity: 1;
+                width: 100%;
+                background: #8e7cb8;
+                transition: all 0.2s cubic-bezier(0.4, 0.0, 0.4, 1);
+            }
+        }
+    }
 }
-
-.filter a {
-	position: relative;
-	font-weight: 600;
-	color: inherit;
-	height: 40px;
-    display: inline-block;
-    line-height: 40px;
-    padding: 0 16px;
-    text-align: center;
-    text-decoration: none;
-}
-
-.filter a:after {
-	position: absolute;
-	bottom: 0px;
-    left: 0px;
-	display: block;
-    content: " ";
-    height: 3px;
-    opacity: 0;
-    width: 0;
-}
-
-.filter a.is-active:after {
-	opacity: 1;
-    width: 100%;
-    background: #8e7cb8;
-  	transition: all 0.2s cubic-bezier(0.4, 0.0, 0.4, 1);
-}
-
-
 

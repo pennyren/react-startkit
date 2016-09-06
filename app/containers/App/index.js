@@ -6,8 +6,6 @@ import Footer from '../Footer';
 import style from './style.css';
 
 function App() {
-	
-
 	return (
 		<div className="todos">
 			<AddTodo/>
@@ -15,7 +13,6 @@ function App() {
 			<Footer />
 		</div>
 	)
-
 }
 
 export default App;

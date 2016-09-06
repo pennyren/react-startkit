@@ -6,7 +6,7 @@
   font-style: normal;
 }
 
-.mdi:before {
+.mdi {
   display: inline-block;
   font: normal normal normal 24px/1 "Material Design Icons";
   font-size: inherit;
@@ -14,10 +14,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transform: translate(0, 0);
-}
-
-.mdi-delete:before {
+  &.mdi-delete:before {
     content: "\F159";
+  }
 }
 
 
