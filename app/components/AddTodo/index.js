@@ -2,8 +2,8 @@ import React from 'react';
 import TextField from '../TextField';
 import Button from '../Button';
 
-import {addTodo} from '../../containers/TodoList/actions';
-import store from '../../store';
+import {addTodo} from 'containers/TodoList/actions';
+import store from 'store';
 import style from './style.css';
 
 class AddTodo extends React.Component {

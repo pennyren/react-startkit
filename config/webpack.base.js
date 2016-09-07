@@ -28,7 +28,11 @@ const config = {
 			inject: true,
 			template: path.resolve(__dirname, appSrc + '/index.html')
 		})
-	]
+	],
+	resolve: {
+        modulesDirectories: ['app', 'node_modules'],
+        extensions: ['', '.js', '.jsx']
+    }
 };
 
 module.exports = config;

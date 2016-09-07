@@ -1,9 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import Todo from '../../Components/Todo';
+import Todo from 'components/Todo';
 
 import {delTodo, toggleTodo} from './actions';
-import store from '../../store';
+import store from 'store';
 
 import style from './style.css';
 

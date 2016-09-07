@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import {filterTodos} from './actions';
-import store from '../../store';
+import store from 'store';
 
 import style from './style.css';
 
