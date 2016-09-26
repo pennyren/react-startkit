@@ -8,10 +8,11 @@ import style from './style.css';
 
 
 class Footer extends React.Component {
-	_filterTodos(e) {
+	filterTodos(e) {
 		const name = e.currentTarget.textContent;
 		store.dispatch(filterTodos(name));
 	}
+	
 	render() {
 		const show = ['All', 'Completed', 'Active'];
 		const activeIndex = show.indexOf(this.props.filter);
@@ -19,7 +20,7 @@ class Footer extends React.Component {
 			let props = {
 				href: '#',
 				key: index,
-				onClick: this._filterTodos
+				onClick: this.filterTodos
 			}
 			if (index == activeIndex) {
 				props.className = 'is-active';

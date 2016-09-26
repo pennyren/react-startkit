@@ -7,11 +7,7 @@ import store from 'store';
 import style from './style.css';
 
 class AddTodo extends React.Component {
-	constructor() {
-		super();
-		this.addTodo = this.addTodo.bind(this);
-	}
-	addTodo() {
+	addTodo = () => {
 		const input = this.textfield.input;
 		const text = input.value;
 		if (text == '') {

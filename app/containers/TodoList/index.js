@@ -8,19 +8,21 @@ import store from 'store';
 import style from './style.css';
 
 class TodoList extends React.Component {
-	_delTodo(e) {
+	delTodo(e) {
 		e.stopPropagation();
 		const index = e.currentTarget.parentNode.getAttribute('data-index');
 		store.dispatch(delTodo(+index));
 	}
-	_toggleTodo(e) {
+
+	toggleTodo(e) {
 		const index = e.currentTarget.parentNode.getAttribute('data-index');
 		store.dispatch(toggleTodo(+index));
 	}
+	
 	render() {
 		let todos = this.props.todos;
 		let items = todos.map((todo, index) => {
-			return <Todo {...todo} key={index} index={index} delTodo={this._delTodo} toggleTodo={this._toggleTodo} />
+			return <Todo {...todo} key={index} index={index} delTodo={this.delTodo} toggleTodo={this.toggleTodo} />
 		})
 		
 		return (
